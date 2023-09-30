@@ -1,0 +1,112 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/*
+nav .logo h1{
+  position: relative;
+  z-index: 1;
+}
+
+nav .logo .bgLogo{
+  top: 0;
+  position: absolute;
+}
+
+nav .logo img:first-child{
+  width: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+nav .links{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+}
+
+nav .links a{
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav .links img{
+  top: 0;
+  position: absolute;
+  filter: drop-shadow(-10px 0px 7px rgba(0, 0, 0, 0.25));
+}
+
+.EditPage{
+  display: flex;
+  width: 100%;
+}
+
+.EditPage form{
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerRight{
+  min-height: 100vh;
+  height: 100%;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bannerRight button{
+  background-color: transparent;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.form-group{
+  margin: 10px;
+}
+
+.form-group img{
+  width:100px
+}
+
+.group-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-all{
+  display: flex;
+}
+
+.submit{
+  width: 225px;
+  display: flex;
+  justify-content: center;
+}*/
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Asegura que esté en la parte superior */
+}
+
+.spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 2px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
