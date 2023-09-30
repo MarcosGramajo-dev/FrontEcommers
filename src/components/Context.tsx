@@ -45,7 +45,7 @@ const [getConfigBasic, setGetConfigBasic] = useState<ConfBasic>({
   type:"",
   direccion: "",
   eslogan: "",
-  logo: new FileList(),
+  logo: new DataTransfer().files,
   tel: 0,
   titulo: "",
   nameLogo: "",
