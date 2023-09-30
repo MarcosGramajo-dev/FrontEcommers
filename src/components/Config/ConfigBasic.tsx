@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import {useForm} from 'react-hook-form';
 import { ConfBasic } from '../../types/type';
-import { useMyContext } from '../context';
+import { useMyContext } from '../Context';
 import Check from '../../images/check.svg'
 import Cross from '../../images/cross.svg'
 

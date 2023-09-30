@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form'
 import axios from 'axios';
 import { ConfLinks } from '../../types/type'
 import { useEffect, useState } from 'react';
-import { useMyContext } from '../context';
+import { useMyContext } from '../Context';
 
 
 export default function ConfigLinks(){

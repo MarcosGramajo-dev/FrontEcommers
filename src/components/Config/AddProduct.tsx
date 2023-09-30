@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form'
 import { AddNewProduct } from '../../types/type'
 import { useState } from 'react';
 import axios from 'axios';
-import { useMyContext } from '../context';
+import { useMyContext } from '../Context';
 import Check from '../../images/check.svg'
 import Cross from '../../images/cross.svg'
 

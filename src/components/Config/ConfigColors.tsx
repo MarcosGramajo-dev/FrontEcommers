@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form'
 import { ConfColors } from '../../types/type'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useMyContext } from '../context';
+import { useMyContext } from '../Context';
 
 export default function ConfigColors(){
 

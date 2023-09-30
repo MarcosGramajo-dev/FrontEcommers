@@ -12,7 +12,7 @@ import {
   // Navigate,
   // Outlet,
 } from "react-router-dom";
-import { MyContextProvider } from './components/context'
+import { MyContextProvider } from './components/Context'
 import DashboardLayout from './components/DashboardLayout';
 
 function App() {

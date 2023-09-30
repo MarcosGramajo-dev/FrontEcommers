@@ -1,6 +1,6 @@
 import {  useState } from "react"
 import {useForm} from 'react-hook-form'
-import { useMyContext } from '../context';
+import { useMyContext } from '../Context';
 import axios from 'axios';
 import {AddNewProduct, EditProduct} from '../../types/type'
 // import noPhoto from '../../images/noPhoto.png'
