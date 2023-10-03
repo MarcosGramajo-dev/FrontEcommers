@@ -28,21 +28,21 @@ export default function TableProduct(){
       ]);
 
 
-    const clearInputs = (event: any) => {
-        event.preventDefault
+    // const clearInputs = (event: any) => {
+    //     event.preventDefault
 
-        setValue("idProduct", "");
-        setValue("modelo", "");
-        setValue("age", 0);
-        setValue("motor", "");
-        setValue("km", 0);
-        setValue("combustible", "");
-        setValue("esUnSlide", false);
-        setArrayPhotos([{
-            public_id:"",
-            secure_url:""
-        }])
-    }
+    //     setValue("idProduct", "");
+    //     setValue("modelo", "");
+    //     setValue("age", 0);
+    //     setValue("motor", "");
+    //     setValue("km", 0);
+    //     setValue("combustible", "");
+    //     setValue("esUnSlide", false);
+    //     setArrayPhotos([{
+    //         public_id:"",
+    //         secure_url:""
+    //     }])
+    // }
 
     const editProduct = ( id: string) => {
         if(id === ""){

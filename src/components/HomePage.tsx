@@ -1,30 +1,29 @@
 import { useMyContext } from './Context';
-import { useState } from 'react';
-import axios from 'axios';
-import golTrend from '../images/products/gol-trend-exterior.jpg'
+// import { useState } from 'react';
+// import axios from 'axios';
 import Carouse from './Carouse'
 
 export default function HomePage(){
     
-    const [getAllProducts, setGetAllProducts] = useState([])
+    //const [getAllProducts, setGetAllProducts] = useState([])
     
-    const {getConfigBasic, getConfigColor, backURL } = useMyContext(); 
+    const {getConfigColor} = useMyContext(); 
 
-    const AllProducts = async () => {
+    // const AllProducts = async () => {
 
-        const response = await axios.get(`${backURL}/product`);
+    //     const response = await axios.get(`${backURL}/product`);
 
-        setGetAllProducts(response.data)
+    //     setGetAllProducts(response.data)
 
-        console.log(response.data)
-    }
+    //     console.log(response.data)
+    // }
 
     const colorP = getConfigColor.colorP
     const colorS = getConfigColor.colorS
 
     console.log(colorP, colorS)
 
-    const classButtons = `w-40 bg-[${getConfigColor.colorP}] text-white py-2 border-solid border-2 border-[${getConfigColor.colorP}] hover:text-[${getConfigColor.colorP}] hover:bg-white`
+    //const classButtons = `w-40 bg-[${getConfigColor.colorP}] text-white py-2 border-solid border-2 border-[${getConfigColor.colorP}] hover:text-[${getConfigColor.colorP}] hover:bg-white`
     
     return(
         <div>

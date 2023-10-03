@@ -1,8 +1,6 @@
 import { useMyContext } from './Context';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
-import golTrend from '../images/products/gol-trend-exterior.jpg'
-import amarok from '../images/products/amarok.jpg'
 import {AddNewProduct} from '../types/type'
 
 export default function HomePage(){
@@ -10,9 +8,6 @@ export default function HomePage(){
     const { backURL } = useMyContext(); 
 
     const [getAllProducts, setGetAllProducts] = useState<AddNewProduct[]>([])
-
-    const [selectFirstImage, setSelectFirstImage] = useState('')
-    const [selectSecondImage, setSelectSecondImage] = useState('')
  
     const AllProducts = async () => {
         const response = await axios.get(`${backURL}/product`);
@@ -44,7 +39,7 @@ export default function HomePage(){
                             className="object-cover overflow-x-hidden relative h-[550px] w-[880px] max-xl:h-[350px] max-xl:w-[650px] max-lg:w-[500px] max-lg:h-[300px] max-md:w-[100vw] animate-fade-down animate-once animate-ease-in-out"
                             >
                             <img
-                                src={selectFirstImage ? selectFirstImage : element.photos[0].secure_url}
+                                src={element.photos[0].secure_url}
                                 alt={element.photos[0].public_id}
                                 className="object-fill w-full h-full max-lg:w-[500px] max-lg:h-[300px] max-md:w-[100vw] "
                             />
