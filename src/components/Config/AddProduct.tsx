@@ -15,12 +15,33 @@ export default function AddProduct(){
     const [stateCheck, setstateCheck] = useState(false);
     const [stateCross, setstateCross] = useState(false);
 
-    const { register, handleSubmit} = useForm<AddNewProduct>()
+    const { register, handleSubmit, setValue} = useForm<AddNewProduct>()
     const { backURL } = useMyContext(); 
     const [ checkboxState, setChecboxState ] = useState(false)
+    const [arrayPhotos, setArrayPhotos] = useState<any>([
+        {
+          public_id: "",
+          secure_url: "",
+        },
+      ]);
 
     function onChangeInput (e:any) {
         setChecboxState(e.target.checked)
+    }
+
+    const clearInputs = () => {
+
+        setValue("idProduct", "");
+        setValue("modelo", "");
+        setValue("age", 0);
+        setValue("motor", "");
+        setValue("km", 0);
+        setValue("combustible", "");
+        setValue("esUnSlide", false);
+        setArrayPhotos([{
+            public_id:"",
+            secure_url:""
+        }])
     }
     
     
@@ -81,6 +102,7 @@ export default function AddProduct(){
                 setstateCheck(true);
                 setTimeout(() => {
                     setstateCheck(false);
+                    clearInputs();
                 }, 3000);
             })
         } catch (error) {

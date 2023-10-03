@@ -34,7 +34,7 @@ export type AddNewProduct = {
     idProduct: string,
     esUnSlide: boolean,
     photos:FileList,
-    arrayPhotos: [public_id: string, secure_url:string]
+    arrayPhotos: [{public_id: string, secure_url:string}]
 }
 
 export type EditProduct = {

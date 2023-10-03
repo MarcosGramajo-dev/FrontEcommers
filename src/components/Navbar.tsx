@@ -20,16 +20,16 @@ export default function Navbar(){
     return(
         <div>
             <div className="w-full h-[100px] relative overflow-hidden flex justify-center" style={{backgroundColor: getConfigColor.colorP}}>
-                <nav className="  flex justify-between max-w-[1980px] w-full">
+                <nav className="  flex justify-between max-w-screen-2xl w-full">
                     <div className="text-white w-[320px] relative flex justify-center items-center">                        
                         <img className="z-10" src={`${getConfigBasic.urlImg}`} alt={getConfigBasic.nameLogo}/>  
                         <div className="absolute">{bgLogo}</div> 
                         {/* <img src={bgLogo} alt="bg-logo"/>            */}
                     </div>
-                    <div className="text-white flex justify-center items-center">
+                    <div className="text-white flex justify-center items-center pr-5">
                         <a className="mx-2 z-10" href="#">Inicio</a>
                         <a className="mx-2 z-10" href="#">Vehiculos</a>
-                        <a className="mx-2 z-10" href="#">Contacto</a>
+                        <a className="mx-2 z-10" href="/dashboard">Dashboard</a>
                         {auth ? <button 
                         onClick={()=> outAccount()}
                         className="mx-2 z-10 text-white active:text-gray-400 focus:outline-none ease-linear transition-all duration-150"

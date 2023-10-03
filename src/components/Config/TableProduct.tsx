@@ -27,25 +27,22 @@ export default function TableProduct(){
         },
       ]);
 
-    // function onChangeInput (e:any) {
-    //     setChecboxState(e.target.checked)
-    // }
 
-    // const clearInputs = (event: any) => {
-    //     event.preventDefault
+    const clearInputs = (event: any) => {
+        event.preventDefault
 
-    //     setValue("idProduct", "");
-    //     setValue("modelo", "");
-    //     setValue("age", 0);
-    //     setValue("motor", "");
-    //     setValue("km", 0);
-    //     setValue("combustible", "");
-    //     setValue("esUnSlide", false);
-    //     setArrayPhotos([{
-    //         public_id:"",
-    //         secure_url:""
-    //     }])
-    // }
+        setValue("idProduct", "");
+        setValue("modelo", "");
+        setValue("age", 0);
+        setValue("motor", "");
+        setValue("km", 0);
+        setValue("combustible", "");
+        setValue("esUnSlide", false);
+        setArrayPhotos([{
+            public_id:"",
+            secure_url:""
+        }])
+    }
 
     const editProduct = ( id: string) => {
         if(id === ""){
@@ -71,11 +68,25 @@ export default function TableProduct(){
     }
 
     const deleteProduct = ( id: string) => {
-        axios.get(`${backURL}/auth/deleteProduct/${id}`,{
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-            }).then((res) => {console.log(res), AllProducts()})
+
+        let localFormData = localStorage.getItem('formData');
+        let token
+
+        if (localFormData) {
+            const parsedLocalFormData = JSON.parse(localFormData)
+            token = parsedLocalFormData?.token
+        }
+
+        if (!token) {
+            throw new Error('Token not found');
+        }
+
+        let headers = {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+        }
+
+        axios.get(`${backURL}/auth/deleteProduct/${id}`,{headers}).then((res) => {console.log(res), AllProducts()})
     }
 
     const onSubmit = (data: AddNewProduct) =>{
@@ -94,14 +105,13 @@ export default function TableProduct(){
                 throw new Error('Token not found');
             }
 
-
             let headers = {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data',
             }
         
             if(data.idProduct === ""){
-                throw new Error("Este es un error personalizado.");
+                throw new Error("Este producto no posee ID");
             }
             
             const formData = new FormData();
