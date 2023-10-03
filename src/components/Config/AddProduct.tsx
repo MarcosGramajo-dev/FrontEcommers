@@ -44,7 +44,7 @@ export default function AddProduct(){
         }])
     }
     
-    
+    arrayPhotos
     const onSubmit = (data: AddNewProduct) =>{
         try {
             setIsLoading(true)
