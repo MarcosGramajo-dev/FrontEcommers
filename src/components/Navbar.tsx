@@ -1,4 +1,4 @@
-import {Outlet} from 'react-router-dom'
+import {Link, Outlet} from 'react-router-dom'
 // import {useForm} from 'react-hook-form'
 // import {useState} from 'react'
 // import bgLogo from '../images/bg-logo.svg'
@@ -29,7 +29,7 @@ export default function Navbar(){
                     <div className="text-white flex justify-center items-center pr-5">
                         <a className="mx-2 z-10" href="#">Inicio</a>
                         <a className="mx-2 z-10" href="#">Vehiculos</a>
-                        <a className="mx-2 z-10" href="/dashboard">Dashboard</a>
+                        <Link className="mx-2 z-10" to="/dashboard">Dashboard</Link>
                         {auth ? <button 
                         onClick={()=> outAccount()}
                         className="mx-2 z-10 text-white active:text-gray-400 focus:outline-none ease-linear transition-all duration-150"
