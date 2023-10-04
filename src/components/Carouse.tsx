@@ -12,7 +12,6 @@ export default function HomePage(){
     const AllProducts = async () => {
         const response = await axios.get(`${backURL}/product`);
         setGetAllProducts(response.data)
-        console.log(response.data)
     }
 
 

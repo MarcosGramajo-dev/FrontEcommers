@@ -45,7 +45,7 @@ export type EditProduct = {
     motor: string,
     idProduct: string,
     esUnSlide: boolean,
-    arrayPhotos:[public_id: string, secure_url:string],
+    arrayPhotos:[{public_id: string, secure_url:string}],
     photos:FileList
 }
 

@@ -60,7 +60,7 @@ export default function ConfigColors(){
     }   
 
     return(
-        <div className="min-w-[380px] max-w-md">
+        <div className="min-w-[350px] max-w-md">
             <form className="mx-5" onSubmit={handleSubmit((data: any)=> {onSubmit(data);})}>
                 <div className="col-span-full">
                     <label htmlFor="colorP" className="block text-sm font-medium leading-6 text-gray-900">Color Principal</label>

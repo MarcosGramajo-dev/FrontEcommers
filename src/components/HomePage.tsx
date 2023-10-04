@@ -2,6 +2,7 @@ import { useMyContext } from './Context';
 // import { useState } from 'react';
 // import axios from 'axios';
 import Carouse from './Carouse'
+import Shop from './Shop'
 
 export default function HomePage(){
     
@@ -47,6 +48,7 @@ export default function HomePage(){
                     
                     <Carouse/> 
                 </div>
+                    <Shop/>
             </div>
 
 

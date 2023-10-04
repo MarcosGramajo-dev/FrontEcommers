@@ -68,7 +68,7 @@ export default function ConfigLinks(){
     } 
 
     return(
-        <div className="min-w-[380px] max-w-md">
+        <div className="min-w-[350px] max-w-md">
             <form className="mx-5" onSubmit={handleSubmit((data: any)=> {onSubmit(data);})} encType="multipart/form-data">
                 <div className="col-span-full">
                     <div className="col-span-full">

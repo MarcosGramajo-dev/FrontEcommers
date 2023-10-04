@@ -133,15 +133,8 @@ export default function ModalLogin(){
                             </div>
                         </div>
                         {/*footer*/}
-                        <div className="flex items-center justify-end p-6 rounded-b flex-col-reverse">
-                            <p className="text-red-500">{resError}</p>
-                            <button 
-                                className="w-full text-red-500 border border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                onClick={() => setShowModal(false)}
-                                
-                            >
-                                Cancelar
-                            </button>
+                        <div className="flex items-center justify-end p-6 rounded-b flex-col">
+                            
                             <button
                                 className=" w-full text-white text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 
@@ -155,6 +148,14 @@ export default function ModalLogin(){
                                     <div className="spinner"></div>
                                 </div>
                             </button>
+                            <button 
+                                className="w-full text-red-500 border border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                onClick={() => setShowModal(false)}
+                                
+                            >
+                                Cancelar
+                            </button>
+                            <p className="text-red-500">{resError}</p>
                         </div>
                     </form>
                 </div>

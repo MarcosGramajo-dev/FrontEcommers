@@ -160,7 +160,7 @@ export default function TableProduct(){
     }   
 
     return(
-        <div className="min-w-[380px] max-w-7xl flex max-md:flex-col  max-sm:w-full">
+        <div className="min-w-[350px] max-w-7xl flex max-md:flex-col  max-sm:w-full">
             <form className="mx-5 my-3" onSubmit={handleSubmit((data: any)=> {onSubmit(data);})}>
                 <h1 className="px-3 py-3 ">Editar Producto</h1>
                 <div className="col-span-full">

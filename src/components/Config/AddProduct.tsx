@@ -116,7 +116,7 @@ export default function AddProduct(){
     }   
 
     return(
-        <div className="min-w-[380px] max-w-md">
+        <div className="min-w-[350px] max-w-md">
             <form className="mx-5" onSubmit={handleSubmit((data: any)=> {onSubmit(data);})}>
                 <h1>Agrega un nuevo producto</h1>
                 <div className="col-span-full">

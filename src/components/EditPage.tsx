@@ -90,8 +90,8 @@ export default function EditPage(){
     }
 
     return(
-        <div className="flex h-full">
-            <div className="w-[50px] h-screen" style={{ backgroundColor: getConfigColor.colorS }}>
+        <div className="flex h-full w-full m-auto max-w-[1920px]">
+            <div className="min-w-[50px] w-[50px] h-screen" style={{ backgroundColor: getConfigColor.colorS }}>
                 <button className="m-2" onClick={() => toggleConfig("Gear")}><img src={Gear} alt="Gear"/></button>
                 <button className="m-2" onClick={() => toggleConfig("Palette")}><img src={Palette} alt="Palette"/></button>
                 <button className="m-2" onClick={() => toggleConfig("Share")}><img src={Share} alt="Share"/></button>
@@ -99,7 +99,7 @@ export default function EditPage(){
                 <button className="m-2" onClick={() => toggleConfig("Table")}><img src={Table} alt="Table"/></button>
                 <button className="m-2" onClick={() => toggleConfig("user")}><img src={avatar} alt="user"/></button>
             </div>
-            <div className="w-full flex justify-center">
+            <div className="w-[100% - 50px] flex justify-center">
                 {gear && <ConfigBasic/>}
                 {palette && <ConfigColors/>}
                 {share && <ConfigLinks/>}
