@@ -1,4 +1,4 @@
-import { AddNewProduct, EditProduct } from '../types/type';
+import { AddNewProduct } from '../types/type';
 import CardM from './CardModel'
 import { useMyContext } from './Context';
 import axios from 'axios'
