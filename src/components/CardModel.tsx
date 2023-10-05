@@ -5,6 +5,9 @@ import {
     Typography,
   //  Avatar,
   } from "@material-tailwind/react";
+// import { useState } from 'react'
+import { useMyContextModal } from './ContextModal';
+// import BigModal from './BigModal'
 
 export type product = {
   modelo: string,
@@ -16,9 +19,10 @@ export type product = {
   photos:[{public_id: string, secure_url:string}],
 }
 
-export default function CardModel(props: product){
 
-  //const imgBG = `absolute inset-0 m-0 h-full w-full rounded-none bg-[url('${props.arrayPhotos[0].secure_url}')] bg-cover bg-center`
+export default function CardModel(props: product){
+  const { setShowBigModal, passModalObject } = useMyContextModal();
+
   const imgBG = props.photos[0].secure_url
 
   console.log(imgBG)
@@ -44,7 +48,7 @@ export default function CardModel(props: product){
           {props.km} {props.combustible} {props.motor}
         </Typography>
         <div>
-          <button className="w-36 h-8 transition bg-white m-2 border border-white border-solid buttonDiagonal hover:bg-opacity-25 hover:text-white " >Ver Mas</button>
+          <button onClick={()=> {setShowBigModal(true), passModalObject(props)}} className="w-36 h-8 transition bg-white m-2 border border-white border-solid buttonDiagonal hover:bg-opacity-25 hover:text-white" >Ver Mas</button>
           <button className="w-36 h-9 text-white bg-green-600 m-2 border border-green-600 border-solid buttonDiagonal hover:bg-opacity-25 hover:text-white" >WhatsApp</button>
         </div>
         {/* <Avatar

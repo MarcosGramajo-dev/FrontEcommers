@@ -1,30 +1,15 @@
 import { useMyContext } from './Context';
+import { useMyContextModal } from './ContextModal';
 // import { useState } from 'react';
 // import axios from 'axios';
 import Carouse from './Carouse'
 import Shop from './Shop'
+import BigModal from './BigModal'
 
 export default function HomePage(){
     
-    //const [getAllProducts, setGetAllProducts] = useState([])
-    
     const {getConfigColor} = useMyContext(); 
-
-    // const AllProducts = async () => {
-
-    //     const response = await axios.get(`${backURL}/product`);
-
-    //     setGetAllProducts(response.data)
-
-    //     console.log(response.data)
-    // }
-
-    const colorP = getConfigColor.colorP
-    const colorS = getConfigColor.colorS
-
-    console.log(colorP, colorS)
-
-    //const classButtons = `w-40 bg-[${getConfigColor.colorP}] text-white py-2 border-solid border-2 border-[${getConfigColor.colorP}] hover:text-[${getConfigColor.colorP}] hover:bg-white`
+    const {objectModal} = useMyContextModal(); 
     
     return(
         <div>
@@ -49,6 +34,26 @@ export default function HomePage(){
                     <Carouse/> 
                 </div>
                     <Shop/>
+                    {/* <BigModal 
+                        modelo={props.modelo}
+                        age={props.age}
+                        km={props.km}
+                        combustible={props.combustible}
+                        motor={props.motor}
+                        key={props.idProduct}
+                        idProduct={props.idProduct}
+                        photos={props.photos}
+                    /> */}
+                    <BigModal 
+                        modelo={objectModal.modelo}
+                        age={objectModal.age}
+                        km={objectModal.km}
+                        combustible={objectModal.combustible}
+                        motor={objectModal.motor}
+                        key={objectModal.idProduct}
+                        idProduct={objectModal.idProduct}
+                        photos={objectModal.photos}
+                    />
             </div>
 
 
