@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createContext, useContext, ReactNode, useEffect, useState } from 'react';
-import {ConfBasic, ConfColors, ConfLinks, EditProduct, UserInfo} from '../types/type' //AddNewProduct
+import {ConfBasic, ConfColors, ConfLinks, EditProduct, UserInfo} from '../types/type'
 
 type MyContextType = {
     getConfigBasic: ConfBasic;
@@ -20,7 +20,7 @@ type MyContextType = {
     getAllUsers: UserInfo[],
     AllUsers: () => Promise<void>,
     outAccount: () => void,
-    headersToken: {}
+    headersToken: {},
 };
 
 type MyContextProviderProps = {
@@ -77,6 +77,7 @@ const [auth, setAuth] = useState<boolean>(false)
 const [loading, setLoading] = useState<boolean>(true)
 
 const [showModal, setShowModal] = useState<boolean>(false);
+// const [showBigModal, setShowBigModal] = useState(false);
 
 const [getAllProducts, setGetAllProducts] = useState([])
 
@@ -259,7 +260,7 @@ const getConfig = async (type: string)=> {
     getAllUsers,
     AllUsers,
     outAccount,
-    headersToken
+    headersToken,
   };
 
   useEffect(()=> {
