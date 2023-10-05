@@ -25,7 +25,7 @@ export default function CardModel(props: product){
     return(
         <Card
       shadow={true}
-      className="relative grid h-96 w-96 m-auto my-3 items-end justify-center overflow-hidden text-center"
+      className="cursor-pointer hover:scale-105 transition   relative grid h-96 min-w-96 w-full max-w-[30%] my-3 items-end justify-center overflow-hidden text-center shadow-gray-600 shadow-md"
     >
       <CardHeader
         floated={true}
@@ -43,6 +43,10 @@ export default function CardModel(props: product){
         <Typography variant="h5" className="mb-4 text-lg text-gray-400">
           {props.km} {props.combustible} {props.motor}
         </Typography>
+        <div>
+          <button className="w-36 h-8 transition bg-white m-2 border border-white border-solid buttonDiagonal hover:bg-opacity-25 hover:text-white " >Ver Mas</button>
+          <button className="w-36 h-9 text-white bg-green-600 m-2 border border-green-600 border-solid buttonDiagonal hover:bg-opacity-25 hover:text-white" >WhatsApp</button>
+        </div>
         {/* <Avatar
           size="xl"
           variant="circular"

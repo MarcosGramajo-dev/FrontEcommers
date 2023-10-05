@@ -1,8 +1,4 @@
 import {Link, Outlet} from 'react-router-dom'
-// import {useForm} from 'react-hook-form'
-// import {useState} from 'react'
-// import bgLogo from '../images/bg-logo.svg'
-import bgLinks from '../images/bg-links.svg'
 // import avatar from '../images/user-login-avatar.svg'
 import { useMyContext } from './Context'
 import ModalLogin from './ModalLogin'
@@ -27,6 +23,24 @@ export default function Navbar(){
                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                     </svg>
 
+    const bgLinks = <svg width="682" height="107" viewBox="0 0 682 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_302_9)">
+                        <path d="M682 100L67.937 100L17.94 0L682 0V100Z" fill={getConfigColor.colorP ? getConfigColor.colorP: "#EB5A29"}/>
+                    </g>
+                    <defs>
+                        <filter id="filter0_d_302_9" x="0.940002" y="-7" width="681.06" height="114" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dx="-10"/>
+                            <feGaussianBlur stdDeviation="3.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_302_9"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_302_9" result="shape"/>
+                        </filter>
+                    </defs>
+                    </svg>
+
     return(
         <div>
             <div className="w-full max-w-[1920px] m-auto h-[100px] relative overflow-hidden flex justify-center bgNavMobile" style={{backgroundColor: getConfigColor.colorP}}>
@@ -48,7 +62,9 @@ export default function Navbar(){
                             type="button" onClick={() => setShowModal(true)}>
                             {logIn}
                         </button>}
-                        <img className="absolute h-[115px] max-sm:w-80" src={bgLinks} alt="bg-links"/>
+                        <div className="absolute h-full max-sm:w-80 max-sm:h-[50px] max-sm:top-[25px] overflow-hidden">
+                            <div className="">{bgLinks}</div>
+                        </div>
                     </div>
                 </nav>
             </div>

@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 *{
   scroll-behavior: smooth;
 }
@@ -21,120 +22,23 @@
   clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0 100%);
 }
 
+.buttonDiagonal {
+  clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+}
+
 .slides {
   display: flex;
   
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   
-  
-  
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  
-  /*
-  scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;
-  */
 }
 
 ::-webkit-scrollbar {
   display: none;
   }
-
-@media(max-width:640px) {
-  .bgNavMobile{
-    background-color: transparent !important;
-  }
-}
-
-/*
-nav .logo h1{
-  position: relative;
-  z-index: 1;
-}
-
-nav .logo .bgLogo{
-  top: 0;
-  position: absolute;
-}
-
-nav .logo img:first-child{
-  width: 100px;
-  position: relative;
-  z-index: 1;
-}
-
-nav .links{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-}
-
-nav .links a{
-  color: #ffffff;
-  position: relative;
-  z-index: 1;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-nav .links img{
-  top: 0;
-  position: absolute;
-  filter: drop-shadow(-10px 0px 7px rgba(0, 0, 0, 0.25));
-}
-
-.EditPage{
-  display: flex;
-  width: 100%;
-}
-
-.EditPage form{
-  display: flex;
-  flex-direction: column;
-}
-
-.bannerRight{
-  min-height: 100vh;
-  height: 100%;
-  width: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bannerRight button{
-  background-color: transparent;
-  border: none;
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-.form-group{
-  margin: 10px;
-}
-
-.form-group img{
-  width:100px
-}
-
-.group-input{
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group-all{
-  display: flex;
-}
-
-.submit{
-  width: 225px;
-  display: flex;
-  justify-content: center;
-}*/
 
 .loading-spinner {
   display: flex;
@@ -154,4 +58,10 @@ nav .links img{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media(max-width:640px) {
+  .bgNavMobile{
+    background-color: transparent !important;
+  }
 }
