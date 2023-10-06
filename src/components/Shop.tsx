@@ -21,7 +21,7 @@ export default function CardModel(){
     },[])
 
     return(
-        <div className="w-full flex flex-wrap m-auto justify-between">
+        <div className="w-full flex flex-wrap m-auto justify-between max-md:justify-center">
             {
                 getAllProducts.map((element: any)=>(
 
