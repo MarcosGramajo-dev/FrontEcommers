@@ -62,12 +62,12 @@ export default function Modal(props: product) {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="flex">
+                <div className="flex max-md:flex-col">
                     <div>
                         
 
                         <div>
-                            <div className="w-[550px] h-[380px] overflow-hidden relative">
+                            <div className="min-w-[200px] w-full max-w-[550px] max-md:max-w-[450px] h-[380px] max-md:h-[280px] overflow-hidden relative">
                                 <div className={`${isImageLoaded ? 'loading-spinner absolute w-full h-full top-0 left-0' : 'hidden'}`} >
                                     <div className="spinner w-10 h-10"></div>
                                 </div>
