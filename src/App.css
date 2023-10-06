@@ -43,7 +43,7 @@
 .loading-spinner {
   display: flex;
   justify-content: center;
-  align-items: center; /* Asegura que esté en la parte superior */
+  align-items: center;
 }
 
 .spinner {

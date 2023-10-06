@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { useMyContextModal } from './ContextModal';
+import { useMyContext } from './Context';
 
 export type product = {
     modelo: string,
@@ -14,17 +15,25 @@ export type product = {
 export default function Modal(props: product) {
 
     const { setShowBigModal, showBigModal } = useMyContextModal();
+    const {getConfigColor} = useMyContext(); 
+
     const [ srcImage, setSrcImage ] = useState< string | null >('')
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+
 
     const changeImage = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-        console.log('entro')
-        setSrcImage( event.currentTarget.getAttribute("src"))
-
-        if(srcImage){
-            document.getElementById("principalImage")?.setAttribute("src", srcImage);
+        setIsImageLoaded(true);
+        const newSrcImage = event.currentTarget.getAttribute("src");
+      
+        if (newSrcImage) {
+          setSrcImage(newSrcImage);
+          document.getElementById("principalImage")?.setAttribute("src", newSrcImage);
         }
-          
       };
+    
+    const handleImageLoad = ()=>{
+        setIsImageLoaded(false)
+    }
 
   return (
     <>
@@ -43,10 +52,10 @@ export default function Modal(props: product) {
                     {props.modelo}
                   </h3>
                   <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={() => setShowBigModal(false)}
                   >
-                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                    <span className=" text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
                       ×
                     </span>
                   </button>
@@ -57,10 +66,16 @@ export default function Modal(props: product) {
                         
 
                         <div>
-                            <img id="principalImage" src={props.photos[0].secure_url} alt="" className="p-5 min-w-[200px] w-full max-w-xl"/>
+                            <div className="w-[550px] h-[380px] overflow-hidden relative">
+                                <div className={`${isImageLoaded ? 'loading-spinner absolute w-full h-full top-0 left-0' : 'hidden'}`} >
+                                    <div className="spinner w-10 h-10"></div>
+                                </div>
+                                <img id="principalImage" onLoad={handleImageLoad} src={props.photos[0].secure_url} alt="" className={`p-5 min-w-[200px] w-full ${isImageLoaded ? ' opacity-75 ' : ''}`}/>
+                                
+                            </div>
                             <div className="flex justify-center items-center pb-5">
                                 { props.photos.map((element)=>(
-                                    <img onClick={(event) => changeImage(event)} className="cursor-pointer w-16 p-1 m-1 opacity-80 border border-white hover:opacity-100 hover:border-slate-600" key={element.public_id} src={element.secure_url} alt={element.public_id}/>
+                                    <img onMouseEnter={changeImage} className="cursor-pointer w-16 p-1 m-1 opacity-80 border border-white hover:opacity-100 hover:border-slate-600" key={element.public_id} src={element.secure_url} alt={element.public_id}/>
                                 )) }
                             </div>
                         </div>
@@ -113,7 +128,9 @@ export default function Modal(props: product) {
                         <tfoot>
                             <tr>
                                 <td colSpan={2}>
+                                    <a href="https://www.google.com" target="_blank">
                                     <button className="w-full h-9 text-white bg-green-600 m-2 border border-green-600 border-solid hover:bg-white hover:text-green-600" >WhatsApp</button>
+                                    </a>
                                 </td>
                             </tr>
                         </tfoot>
