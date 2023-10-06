@@ -24,7 +24,8 @@ export default function Modal(props: product) {
     const changeImage = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
         setIsImageLoaded(true);
         const newSrcImage = event.currentTarget.getAttribute("src");
-      
+        srcImage
+        getConfigColor
         if (newSrcImage) {
           setSrcImage(newSrcImage);
           document.getElementById("principalImage")?.setAttribute("src", newSrcImage);
