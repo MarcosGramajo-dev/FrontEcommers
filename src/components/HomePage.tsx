@@ -9,8 +9,8 @@ import BigModal from './BigModal'
 export default function HomePage(){
     
     const {getConfigColor} = useMyContext(); 
-    const {objectModal} = useMyContextModal(); 
-    
+    const {showBigModal, objectModal} = useMyContextModal(); 
+    showBigModal
     return(
         <div>
             <div className="max-w-screen-2xl m-auto p-6 overflow-hidden">

@@ -25,7 +25,7 @@ export default function HomePage(){
                     <p className="text-xl text-gray-500">
                     {
                         getAllProducts.map((element: any)=>(
-                            element.esUnSlide ? <a href={'#' + element.modelo}  className="text-lg max-lg:text-base uppercase text-gray-500 p-2 hover:text-gray-700 hover:font-bold active:font-bold active:text-gray-700">{element.modelo} | </a> : null
+                            element.esUnSlide ? <a href={'#' + element.modelo} key={element.modelo}  className="text-lg max-lg:text-base uppercase text-gray-500 p-2 hover:text-gray-700 hover:font-bold active:font-bold active:text-gray-700">{element.modelo} | </a> : null
                         ))
                     }
                     </p>

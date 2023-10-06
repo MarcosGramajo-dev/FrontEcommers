@@ -5,9 +5,8 @@ import {
     Typography,
   //  Avatar,
   } from "@material-tailwind/react";
-// import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useMyContextModal } from './ContextModal';
-// import BigModal from './BigModal'
 
 export type product = {
   modelo: string,
@@ -22,22 +21,31 @@ export type product = {
 
 export default function CardModel(props: product){
   const { setShowBigModal, passModalObject } = useMyContextModal();
+  const [useURLImage, setUseURLImage] = useState('')
 
   const imgBG = props.photos[0].secure_url
+  useEffect(() => {
+    // Configurar useURLImage cuando el componente se monte
+    setUseURLImage(props.photos[0].secure_url);
+  }, [props.photos]);
 
-  console.log(imgBG)
     return(
         <Card
-      shadow={true}
-      className="cursor-pointer hover:scale-105 transition   relative grid h-96 min-w-96 w-full min-w-[350px] max-w-[30%] my-3 items-end justify-center overflow-hidden text-center shadow-gray-600 shadow-md"
+      //shadow={true}
+      className="relative cursor-pointer hover:scale-105 transition grid h-96 min-w-96 w-full min-w-[350px] max-w-[30%] my-3 items-end justify-center overflow-hidden text-center shadow-gray-600 shadow-md"
     >
+      
       <CardHeader
-        floated={true}
-        shadow={true}
-        color="transparent"
-        className={`absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-[url('${imgBG}')] bg-center`}
-        //style={{ backgroundImage: `"url('${props.photos[0].secure_url}')"` }}
+        //floated={true}
+        //shadow={true}
+        //color="transparent"
+        className={`absolute inset-0 m-0 h-full `}
+        //style={{ backgroundImage: `"url('${useURLImage}')"` }}
+        
       >
+        <div className="relative h-full top-0 left-0 ">
+          <img src={useURLImage} alt={props.photos[0].public_id} className="h-full w-full object-cover absolute top-0 left-0 " />
+        </div>
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
       </CardHeader>
       <CardBody className="relative py-7 px-6 max-sm:px-0 md:px-12">
