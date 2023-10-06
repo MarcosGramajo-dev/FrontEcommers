@@ -23,7 +23,7 @@ export default function CardModel(props: product){
   const { setShowBigModal, passModalObject } = useMyContextModal();
   const [useURLImage, setUseURLImage] = useState('')
 
-  const imgBG = props.photos[0].secure_url
+  //const imgBG = props.photos[0].secure_url
   useEffect(() => {
     // Configurar useURLImage cuando el componente se monte
     setUseURLImage(props.photos[0].secure_url);
