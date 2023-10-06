@@ -130,7 +130,7 @@ export default function Modal(props: product) {
                             <tr>
                                 <td colSpan={2}>
                                     <a href="https://www.google.com" target="_blank">
-                                    <button className="w-full h-9 text-white bg-green-600 m-2 border border-green-600 border-solid hover:bg-white hover:text-green-600" >WhatsApp</button>
+                                    <button className="w-full h-9 text-white bg-green-600 m-0 border border-green-600 border-solid hover:bg-white hover:text-green-600" >WhatsApp</button>
                                     </a>
                                 </td>
                             </tr>
