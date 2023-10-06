@@ -1,4 +1,4 @@
-// import React from "react";
+import {useState} from "react";
 import { useMyContextModal } from './ContextModal';
 
 export type product = {
@@ -14,6 +14,17 @@ export type product = {
 export default function Modal(props: product) {
 
     const { setShowBigModal, showBigModal } = useMyContextModal();
+    const [ srcImage, setSrcImage ] = useState< string | null >('')
+
+    const changeImage = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+        console.log('entro')
+        setSrcImage( event.currentTarget.getAttribute("src"))
+
+        if(srcImage){
+            document.getElementById("principalImage")?.setAttribute("src", srcImage);
+        }
+          
+      };
 
   return (
     <>
@@ -41,15 +52,81 @@ export default function Modal(props: product) {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-col">
-                  {props.modelo}
-                  {props.age}
-                  {props.combustible}
-                  {props.motor}
-                  {props.km}
+                <div className="flex">
+                    <div>
+                        
+
+                        <div>
+                            <img id="principalImage" src={props.photos[0].secure_url} alt="" className="p-5 min-w-[200px] w-full max-w-xl"/>
+                            <div className="flex justify-center items-center pb-5">
+                                { props.photos.map((element)=>(
+                                    <img onClick={(event) => changeImage(event)} className="cursor-pointer w-16 p-1 m-1 opacity-80 border border-white hover:opacity-100 hover:border-slate-600" key={element.public_id} src={element.secure_url} alt={element.public_id}/>
+                                )) }
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="relative p-6 flex-col">
+                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <tbody>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                   MODELO
+                                </th>
+                                <td className="px-6 py-4">
+                                    {props.modelo}
+                                </td>
+                            </tr>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    AÑO
+                                </th>
+                                <td className="px-6 py-4">
+                                    {props.age}
+                                </td>
+                            </tr>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    COMBUSTIBLE
+                                </th>
+                                <td className="px-6 py-4">
+                                    {props.combustible}
+                                </td>
+                            </tr>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    MOTOR
+                                </th>
+                                <td className="px-6 py-4">
+                                    {props.motor}
+                                </td>
+                            </tr>
+                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    KILOMETROS
+                                </th>
+                                <td className="px-6 py-4">
+                                    {props.km}
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colSpan={2}>
+                                    <button className="w-full h-9 text-white bg-green-600 m-2 border border-green-600 border-solid hover:bg-white hover:text-green-600" >WhatsApp</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        </table>
+                    
+                    
+                    
+                    
+                    
+                    </div>
                 </div>
                 {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                {/* <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
@@ -64,7 +141,7 @@ export default function Modal(props: product) {
                   >
                     Save Changes
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

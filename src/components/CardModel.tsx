@@ -29,7 +29,7 @@ export default function CardModel(props: product){
     return(
         <Card
       shadow={true}
-      className="cursor-pointer hover:scale-105 transition   relative grid h-96 min-w-96 w-full max-w-[30%] my-3 items-end justify-center overflow-hidden text-center shadow-gray-600 shadow-md"
+      className="cursor-pointer hover:scale-105 transition   relative grid h-96 min-w-96 w-full min-w-[350px] max-w-[30%] my-3 items-end justify-center overflow-hidden text-center shadow-gray-600 shadow-md"
     >
       <CardHeader
         floated={true}
@@ -40,7 +40,7 @@ export default function CardModel(props: product){
       >
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
       </CardHeader>
-      <CardBody className="relative py-7 px-6 md:px-12">
+      <CardBody className="relative py-7 px-6 max-sm:px-0 md:px-12">
         <Typography variant="h2" color="white" className="mb-6 font-medium text-2xl leading-[1.5]" >
           {props.modelo} {props.age}
         </Typography>
