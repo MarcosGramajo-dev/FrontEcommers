@@ -96,8 +96,9 @@ export default function AddProduct(){
                     }
                 }
             }
-            axios.post(`${backURL}/auth/addProduct`, formData, { headers } ).then((res) => {
-                console.log(res), 
+            axios.post(`${backURL}/auth/addProduct`, formData, {headers} ).then((res) => {
+                console.log('addProduct', res), 
+                console.log('addProduct URL', `${backURL}/auth/addProduct`), 
                 setIsLoading(false)
                 setstateCheck(true);
                 setTimeout(() => {

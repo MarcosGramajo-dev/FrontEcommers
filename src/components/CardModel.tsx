@@ -26,7 +26,9 @@ export default function CardModel(props: product){
   //const imgBG = props.photos[0].secure_url
   useEffect(() => {
     // Configurar useURLImage cuando el componente se monte
-    setUseURLImage(props.photos[0].secure_url);
+    if(props.photos[0]){
+        setUseURLImage(props.photos[0].secure_url);
+    }
   }, [props.photos]);
 
     return(
@@ -44,7 +46,7 @@ export default function CardModel(props: product){
         
       >
         <div className="relative h-full top-0 left-0 ">
-          <img src={useURLImage} alt={props.photos[0].public_id} className="h-full w-full object-cover absolute top-0 left-0 " />
+          <img src={useURLImage} className="h-full w-full object-cover absolute top-0 left-0 " />
         </div>
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
       </CardHeader>
