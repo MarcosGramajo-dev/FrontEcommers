@@ -227,8 +227,8 @@ export default function TableProduct(){
                     </div>
                 </div>
                 <div className="flex flex-wrap">
-                    {arrayPhotos.map((element:any) => (
-                        <img className="w-[200px]" src={element.secure_url} alt={element.public_id} key={element.public_id}/>
+                    {arrayPhotos.map((element:any, index:any) => (
+                        <img className="w-[200px]" src={element.secure_url ? element.secure_url : '' } alt={element.public_id ? element.public_id : ''} key={element.public_id ? element.public_id : index}/>
                     ))}
                 </div>
 
@@ -268,7 +268,7 @@ export default function TableProduct(){
                             <tr key={element.idProduct} className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                 <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{element.modelo}</th>
                                 <td className="text-center">{element.age}</td>
-                                <td className="text-center">{element.esUnSlide.toString()}</td>
+                                <td className="text-center">{element.esUnSlide ? element.esUnSlide.toString() : ''}</td>
                                 <td className="flex py-2">
                                     <button className="font-medium mx-2 text-center text-blue-600 dark:text-blue-500 hover:underline" onClick={()=> editProduct(element.idProduct)}>Editar</button>
                                     <button className="font-medium mx-2 text-center text-blue-600 dark:text-blue-500 hover:underline" onClick={()=> deleteProduct(element.idProduct)}>Borrar</button>
