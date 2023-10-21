@@ -103,7 +103,13 @@ export default function AddProduct(){
                     setstateCheck(false);
                     clearInputs();
                 }, 3000);
-            }).catch(error => console.log('errorAPI', error))
+            }).catch(error => {
+                setIsLoading(false)
+                setstateCross(true);
+                setTimeout(() => {
+                    setstateCross(false);
+                }, 3000);
+                console.log('errorAPI', error)})
         } catch (error) {
             setIsLoading(false)
             setstateCross(true);
