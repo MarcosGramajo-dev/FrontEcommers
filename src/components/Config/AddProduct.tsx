@@ -68,10 +68,10 @@ export default function AddProduct(){
             }
 
 
-            let headers = {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'multipart/form-data',
-            }
+            // let headers = {
+            //     'Authorization': `Bearer ${token}`,
+            //     'Content-Type': 'multipart/form-data',
+            // }
 
             formData.append('idProduct', data.idProduct)
             formData.append('modelo', data.modelo)
@@ -87,12 +87,12 @@ export default function AddProduct(){
                 if (photos && photos.length > 0) {
                     for (let i = 0; i < photos.length; i++) {
                         const photo = photos[i];
-                
-                        if (photo.size < 1000000) {
-                            formData.append(`photo${i + 1}`, photo);
-                        } else {
-                        console.log(`Tamaño máximo de imagen (foto ${i + 1}): 1MB`);
-                        }
+                        formData.append(`photo${i + 1}`, photo);
+                        // if (photo.size < 1000000) {
+                            
+                        // } else {
+                        // console.log(`Tamaño máximo de imagen (foto ${i + 1}): 1MB`);
+                        // }
                     }
                 }
             }
