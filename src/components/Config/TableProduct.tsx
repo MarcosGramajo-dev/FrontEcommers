@@ -1,4 +1,4 @@
-import {  useState, useRef } from "react"
+import {  useState } from "react"
 import {useForm} from 'react-hook-form'
 import { useMyContext } from '../Context';
 import axios from 'axios';
@@ -16,9 +16,6 @@ export default function TableProduct(){
     const [stateCheck, setstateCheck] = useState(false);
     const [stateCross, setstateCross] = useState(false);
     // const [ checkboxState, setChecboxState ] = useState(false)
-
-    const checkboxRef = useRef(null);
-
 
     const {register, handleSubmit, setValue} = useForm<EditProduct>()
     const { getAllProducts, backURL, AllProducts } = useMyContext(); 
