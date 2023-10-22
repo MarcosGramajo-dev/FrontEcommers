@@ -1,4 +1,4 @@
-import {  useState } from "react"
+import {  useState, useRef } from "react"
 import {useForm} from 'react-hook-form'
 import { useMyContext } from '../Context';
 import axios from 'axios';
@@ -16,6 +16,8 @@ export default function TableProduct(){
     const [stateCheck, setstateCheck] = useState(false);
     const [stateCross, setstateCross] = useState(false);
     // const [ checkboxState, setChecboxState ] = useState(false)
+
+    const checkboxRef = useRef(null);
 
 
     const {register, handleSubmit, setValue} = useForm<EditProduct>()
@@ -199,15 +201,18 @@ export default function TableProduct(){
                     </div>
                 </div>
                 <div className="col-span-full my-4">
-                    <div className="relative flex gap-x-3">
-                        <div className="flex h-6 items-center">
-                            <input className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" type="checkbox" id="esUnSlide"/>                    
-                        </div>
-                        <div className="text-sm leading-6">
-                            <label htmlFor="comments" className="font-medium text-gray-900">
-                                ¿Aparece en el Slide Principal?
-                            </label>
-                        </div>
+                <div className="flex h-6 items-center">
+                    <input
+                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                        type="checkbox"
+                        id="esUnSlide"
+                        {...register("esUnSlide")} // Agregar la referencia al checkbox
+                    />
+                    </div>
+                    <div className="text-sm leading-6">
+                        <label htmlFor="esUnSlide" className="font-medium text-gray-900">
+                            ¿Aparece en el Slide Principal?
+                        </label>
                     </div>
                 </div>
                 <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">
