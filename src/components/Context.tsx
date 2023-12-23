@@ -84,11 +84,15 @@ const [getAllProducts, setGetAllProducts] = useState([])
 const [getAllUsers, setGetAllUsers] = useState([])
 
 
-// const backURL = "http://localhost:3000"
-const backURL = "https://backecommers.onrender.com"
+const backURL = "http://localhost:3000"
+// const backURL = "https://backecommers.onrender.com"
 const [headersToken, setHeaders] = useState({})
 
 
+setInterval(async ()=> {
+  const response = await axios.get(`${backURL}/live`);
+  console.log(response)
+}, 6000)
 
 const loginUser = (loginUserForm: UserInfo) => {
   setLoading(true)
