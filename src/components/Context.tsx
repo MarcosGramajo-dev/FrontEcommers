@@ -92,7 +92,7 @@ const [headersToken, setHeaders] = useState({})
 setInterval(async ()=> {
   const response = await axios.get(`${backURL}/live`);
   console.log(response)
-}, 6000)
+}, 60000)
 
 const loginUser = (loginUserForm: UserInfo) => {
   setLoading(true)
